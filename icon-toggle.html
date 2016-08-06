@@ -1,0 +1,109 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../paper-item/paper-icon-item.html">
+<!--<link rel="import" href="../paper-item/paper-item-shared-styles.html">-->
+<link rel="import" href="../paper-item/paper-item-body.html">
+<link rel="import" href="../paper-styles/typography.html">
+<link rel="import" href="../paper-styles/demo-pages.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../paper-styles/paper-styles-classes.html">
+<!--<link rel="import" href="../paper-styles/default-theme.html">-->
+<link rel="import" href="../paper-item/paper-item.html">
+
+<dom-module id="icon-toggle">
+
+
+    <template>
+        <style include="paper-item-shared-styles"></style>
+        <style>
+            /* local DOM styles go here */
+            :host {
+                display: inline-block;
+
+            }
+            .dataitem {
+                margin-left: 10px;   
+                text-align: center;
+            }
+            .teamPrimary {
+                /*background-color: lightskyblue;*/
+                color: darkslateblue;
+                border-right-width: thick;
+                border-right-color: lightskyblue;
+            }
+            .teamSecondary {
+                background-color: darkslateblue;
+                color: lightskyblue;
+            }
+            .colorBlock {
+                background-color: lightskyblue;
+                width: 25px;
+            }
+
+            .teamdata {
+                @apply(--layout-horizontal);
+            }
+            .datapair {
+                @apply(--layout-vertical);                
+            }
+            .bigIcon {
+                --iron-icon-height: 48px;
+                --iron-icon-width: 48px;
+                /*background-color: lightskyblue;*/
+            }
+
+
+        </style>
+
+
+        <!-- local DOM goes here -->
+
+        <paper-icon-item class="teamPrimary">            
+            <iron-icon 
+                icon="polymer"
+                class="bigIcon"
+                item-icon></iron-icon>        
+            <paper-item-body
+                three-line>
+                <div class="paper-font-headline">Sandi's Signature Hair Stars</div>
+                <div>
+                    <div class="teamdata">
+                        <div class="datapair">
+                            <div secondary class="dataitem">Coeffecient</div>
+                            <div class="dataitem">[[coeffecient]]</div>
+                        </div>
+                        <div class="datapair">
+                            <div secondary class="dataitem">Performance</div>
+                            <div class="dataitem">[[performance]]</div>                                
+                        </div>         
+                        <div class="datapair">
+                            <div secondary class="dataitem">Record</div>
+                            <div class="dataitem">[[wins]] - [[losses]]</div>                                
+                        </div>
+                        <div class="datapair">
+                            <div secondary class="dataitem">Current Placement</div>
+                            <div class="dataitem">[[placement]]</div>                                
+                        </div>
+                    </div>
+                </div>                
+            </paper-item-body>        
+
+        </paper-icon-item>
+    </template>
+
+    <script>
+        Polymer({
+            is : 'icon-toggle',
+            properties : {
+                rank : String,
+                coeffecient : String,
+                performance : String,
+                wins : String,
+                losses : String,
+                placement : String
+            }
+        });
+    </script>
+
+</dom-module>
+

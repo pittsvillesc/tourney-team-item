@@ -1,0 +1,57 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../../iron-icons/iron-icons.html">
+<link rel="import" href="../icon-toggle.html">
+<link rel="import" href="../../paper-styles/demo-pages.html">
+<link rel="import" href="../bower_components/iron-flex-layout/classes/iron-flex-layout.html">
+
+<dom-module id="icon-toggle-demo">
+    <template>
+        <style>
+            :host {
+                font-family: sans-serif;
+            };
+
+        </style>
+        <h1>THIS IS THE DEMO</h1>
+        <!--<h3>Statically-configured icon-toggles</h3>-->
+
+        <div role="listbox" class="layout vertical">
+            <icon-toggle
+                rank="1"
+                coeffecient="10.56"
+                performance="23.64"
+                wins="2"
+                losses="1"
+                placement="Tier 1"></icon-toggle>
+            <icon-toggle
+                rank="2"
+                coeffecient="10.56"
+                performance="23.64"
+                wins="2"
+                losses="1"
+                placement="Tier 1"></icon-toggle>
+        </div>
+        <!--<icon-toggle toggle-icon="star" pressed></icon-toggle>-->
+
+        <!--<h3>Data-bound icon-toggle</h3>-->
+
+        <!-- use a computed binding to generate the message -->
+        <!--<div><span>[[message(isFav)]]</span></div>-->
+
+        <!-- curly brackets ({{}}} allow two-way binding --> 
+        <!--<icon-toggle toggle-icon="favorite" pressed="{{isFav}}"></icon-toggle>-->
+    </template>
+
+    <script>
+        Polymer({
+            is : "icon-toggle-demo",
+            message : function( fav ) {
+                if (fav) {
+                    return "You really like me!";
+                } else {
+                    return "Do you like me?";
+                }
+            }
+        });
+    </script>
+</dom-module>
